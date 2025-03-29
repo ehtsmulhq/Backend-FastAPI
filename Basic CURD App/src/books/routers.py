@@ -1,50 +1,28 @@
+from fastapi import APIRouter,status
 from fastapi.exceptions import HTTPException
-from fastapi import FastAPI,status
-from pydantic import BaseModel
 from typing import List
+from src.books.data import books
+from src.books.schemas import Book, BookCreateModel, BookUpdateModel
 
 
-app= FastAPI()
- 
-books = [
-    { "id": 1, "title": "1984", "author": "George Orwell", "published_year": 1949, "genre": "Dystopian"},
-    { "id": 2, "title": "To Kill a Mockingbird", "author": "Harper Lee", "published_year": 1960, "genre": "Fiction"},
-    { "id": 3, "title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "published_year": 1925, "genre": "Fiction"}    
-    ]
+book_router=APIRouter()
 
 
-class Book(BaseModel):
-  id:int
-  title:str
-  author:str
-  published_year:int
-  genre:str
-
-@app.get('/books',response_model=List[Book])
+@book_router.get('/',response_model=List[Book])
 async def read_root():
   return books
 
 
-class BookCreateModel(BaseModel):
-    title:str
-    author:str
-    published_year:int
-    genre:str
 
-class BookUpdateModel(BaseModel):
-    title:str
-    author:str
-    published_year:int
-    genre:str
     
-@app.post('/books',status_code=201)
+@book_router.post('/',status_code=201)
 async def create_book(book_data:BookCreateModel)->dict:
   new_book = book_data.model_dump()
   new_book["id"] = len(books) + 1
   books.append(new_book)
   return new_book
 
-@app.get('/books/{book_id}',response_model=List[Book])
+@book_router.get('/{book_id}',response_model=List[Book])
 async def read_book(book_id:int):
   for book in books:
     if book["id"] == book_id:
@@ -52,7 +30,7 @@ async def read_book(book_id:int):
   raise HTTPException(status_code =status.HTTP_404_NOT_FOUND,detail="Book not found")
 
 
-@app.patch('/books/{book_id}',response_model=List[Book])
+@book_router.patch('/{book_id}',response_model=List[Book])
 async def update_book(book_id: int, book_update: BookUpdateModel) -> dict:
     for book in books:
         if book['id'] == book_id:
@@ -64,7 +42,7 @@ async def update_book(book_id: int, book_update: BookUpdateModel) -> dict:
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Book not found")
 
-@app.delete('/books/{book_id}',status_code=status.HTTP_204_NO_CONTENT)
+@book_router.delete('/{book_id}',status_code=status.HTTP_204_NO_CONTENT)
 async def delete_book(book_id: int):
   for book in books:
     if book['id'] == book_id:
