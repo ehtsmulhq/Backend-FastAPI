@@ -4,15 +4,6 @@ I am learning backend with Fastapi. I will be adding simple projects.
 
 ## Project 
 - Basic CURD APP (Book Management)
-  -Folder Structure
-  Basic CURD App/
-    └── src/
-        ├── books/
-        │   ├── __init__.py
-        │   ├── routers.py
-        │   ├── data.py
-        │   └── schemas.py
-        ├── __init__.py
 
 ## 🛠️ Tech Stack
 - Python
