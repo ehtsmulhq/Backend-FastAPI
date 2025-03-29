@@ -7,12 +7,6 @@ I am learning backend with Fastapi. I will be adding simple projects.
 - FastAPI
 - SQLAlchemy / PostgreSQL
 
-## 📸 Screenshots
-Add some screenshots to showcase your project:
-
-![Screenshot 1](link-to-image1)
-![Screenshot 2](link-to-image2)
-
 ## 📦 Installation
 ```bash
 # Clone the repository
