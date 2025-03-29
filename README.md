@@ -14,7 +14,7 @@ git clone https://github.com/ehtsmulhq/Backend-FastAPI
 
 
 # Navigate to the project directory
-cd your-repo
+cd Backend-FastAPI
 
 # Create a virtual environment
 python -m venv env
