@@ -10,7 +10,8 @@ I am learning backend with Fastapi. I will be adding simple projects.
 ## 📦 Installation
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/ehtsmulhq/Backend-FastAPI
+
 
 # Navigate to the project directory
 cd your-repo
@@ -42,15 +43,13 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a pull request.
 
-## 🛡️ License
-This project is licensed under the [MIT License](LICENSE).
 
 ## 📩 Contact
 For any inquiries, contact:
-- Email: your-email@example.com
-- LinkedIn: [Your Profile](https://linkedin.com/in/your-profile)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- Email:ehatasamul.haque.adib@gmail.com
+- LinkedIn: [Ehatasamul Haque Adib](https://www.linkedin.com/in/ehatasamul-haque-78265827a/)
+
 
 ---
-*This README was generated with ❤️ by [Your Name](https://github.com/your-username).*
+*This README was generated with ❤️ by [Ehatasamul Haque Adib](https://github.com/ehtsmulhq).*
 
