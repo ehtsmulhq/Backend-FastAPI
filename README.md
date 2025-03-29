@@ -2,6 +2,9 @@
 ## 📌 Description
 I am learning backend with Fastapi. I will be adding simple projects.
 
+## Project 
+- Basic CURD APP (Book Management)
+
 ## 🛠️ Tech Stack
 - Python
 - FastAPI
